@@ -146,13 +146,12 @@ class StripePayment extends PaymentFactory {
 
 
 // Usage
-function payment(factory: PaymentFactory): void {
-    const provider = factory.factoryMethod();
-    provider.createPayment(100);
-}
 
-// with paypal
-payment(new PaypalPayment());
-// with stripe
-payment(new StripePayment());
-```
+function getPaymentProvider(method): instance of {
+    switch method {
+        case 'paypal':
+            return new PaypalPayment();
+        calse 'stripe':
+            return new StripePayment()
+    }
+}
