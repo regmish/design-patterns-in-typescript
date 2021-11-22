@@ -1,4 +1,4 @@
-## Software Desing Patters in TypeScript
+## Software Design Patterns in TypeScript
 
 
 ### Creational

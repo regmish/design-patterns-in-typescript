@@ -113,45 +113,24 @@ class StripePaymentProvider implements PaymentProvider {
 /**
  * The creator class declares the factory method that is supposed to return an object of a Product class
  */
-abstract class PaymentFactory {
+class PaymentFactory {
     /**
      * Subclass will override this method to return an object of a PaymentProvider class
      */
-    public abstract factoryMethod(): PaymentProvider;
-
-    /**
-     * In addition to factoryMethod, this class might contains some core business logic
-     * that operates on PaymentProvider objects
-     */
-    public updateCommission(): void {
-        const provider = this.factoryMethod();
-        provider.comissionRate = 0.05;
-    }
+    public static getPaymentProvider(method): PaymentProvider {
+        switch method {
+            case 'paypal':
+                return new PaypalPaymentProvider();
+            case 'stripe':
+                return new StripePaymentProvider();
+            default:
+                return null
+        }
+    };
 }
-
-
-// Concrete Classes
-class PaypalPayment extends PaymentFactory {
-    public factoryMethod(): PaymentProvider {
-        return new PaypalPaymentProvider();
-    }
-}
-
-class StripePayment extends PaymentFactory {
-    public factoryMethod(): PaymentProvider {
-        return new StripePaymentProvider();
-    }
-}
-
-
 
 // Usage
+const method = user.getMethod(); // returns either 'stripe' | 'paypal' that user wish to use
 
-function getPaymentProvider(method): PaymentFactory {
-    switch method {
-        case 'paypal':
-            return new PaypalPayment();
-        calse 'stripe':
-            return new StripePayment()
-    }
-}
+paymnetProvider = PaymentFactory.getPaymentProvider(method);
+const charge = paymentProvider.createPayment(user.amount);
