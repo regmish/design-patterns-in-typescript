@@ -147,7 +147,7 @@ class StripePayment extends PaymentFactory {
 
 // Usage
 
-function getPaymentProvider(method): instance of {
+function getPaymentProvider(method): PaymentFactory {
     switch method {
         case 'paypal':
             return new PaypalPayment();
