@@ -111,7 +111,7 @@ class StripePaymentProvider implements PaymentProvider {
 
 
 /**
- * The creator class declares the factory method that is supposed to return an object of a Product class
+ * The creator class declares the factory method that is supposed to return an object of a PaymentProvider class
  */
 class PaymentFactory {
     /**
