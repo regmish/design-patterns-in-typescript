@@ -1,4 +1,4 @@
-_Builder Pattern helps us construct a complex object with varying configuration step by step using the same construction code_
+*Builder Pattern helps us construct a complex object with varying configuration step by step using the same construction code*
 
 ### Problem
 
