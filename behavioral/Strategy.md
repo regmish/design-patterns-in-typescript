@@ -6,6 +6,9 @@ Strategy problem can be thought of an idea where any task can be accomplished us
 ### Problem
 
 Let us suppose we have different Bonus Scheme an employee can have based on his years of experience/department/Heirarchy and so on.
+We want to design a flexible bonus giving system.
+
+### Solution
 
 
 Let us start by defining a `Scheme` Interface that every Strategy (Algorithm) has to satisfy in order to be injected into the Context during runtime.
