@@ -12,3 +12,4 @@
 
 ### Behavioral
 * [Strategy](behavioral/Strategy.md)
+* [Observer](behavioral/Observer.md)
