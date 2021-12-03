@@ -1,4 +1,4 @@
-*Observer pattern is a behavioral design pattern in which an object, named the Subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.*
+*Observer pattern is a behavioral design pattern in which an object, which is called Subject/Observable, maintains a list of its dependent objects, called Observers, and notifies them automatically of any state changes, usually by calling one of their methods.*
 
 Not to be confused with Pub/sub pattern
 
