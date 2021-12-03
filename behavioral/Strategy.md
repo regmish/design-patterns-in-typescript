@@ -90,8 +90,9 @@ Now Let's give some bonus
 
 ```typescript
 const employees = Employee.find();
-let bonusContext = new BonusContext(new DefaultBonus());
+
 for(employee of employees) {
+    const bonusContext = new BonusContext(new DefaultBonus()); // if none of the bonus scheme fits, we apply the default context
     // based on some condition during runtime we apply different bonus to different employee
     if(employee.isExceptional) {
         bonusContext.setScheme(new ExceptionalPerformanceBonus());
